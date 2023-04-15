@@ -23,7 +23,7 @@ public class MultiverseArray {
 
 }
 }
-*/
+*/ // 22:16 güncellemesi 22:20
 import java.util.Scanner;
 
 public class MultiverseArray {
