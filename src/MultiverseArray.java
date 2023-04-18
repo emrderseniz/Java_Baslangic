@@ -24,6 +24,7 @@ public class MultiverseArray {
 }
 }
 */ // 22:16 güncellemesi 22:20
+import java.util.Random;
 import java.util.Scanner;
 
 public class MultiverseArray {
@@ -40,21 +41,34 @@ public class MultiverseArray {
 
         // Kullanıcıdan girilen boyutlarda bir matris oluştur
         int[][] matrix = new int[row][col];
+        int k=0;
+        Random rastgele = new Random();
 
         // Matrisin elemanlarını kullanıcıdan al
         for (int i = 0; i < row; i++) {
             for (int j = 0; j < col; j++) {
-                System.out.print("[" + i + "][" + j + "] elemanını girin: ");
-                matrix[i][j] = input.nextInt();
+            	k=rastgele.nextInt(row*col);
+            	System.out.println("[" + i + "][" + j + "] elemanı için girilen değer: "+ k);
+                
+            	matrix[i][j] = k;
+                
+                
             }
         }
 
         // Matrisi ekrana yazdır
-        for (int i = 0; i < row; i++) {
-            for (int j = 0; j < col; j++) {
-                System.out.print(matrix[i][j] + " ");
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[0].length; j++) {
+                if(matrix[i][j]<10) {
+                	System.out.print(matrix[i][j] + "  |");
+                }
+                else {
+                	System.out.print(matrix[i][j] + " |");
+                }
+                }
+            System.out.println("");
             }
-            System.out.println();
+           
         }
     }
-}
+
